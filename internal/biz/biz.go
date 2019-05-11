@@ -1,9 +1,12 @@
 package biz
 
 import (
+	"context"
+	"fmt"
+	"os"
+
 	"github.com/weeon/proto/ops"
 	"google.golang.org/grpc"
-	"os"
 )
 
 var (
@@ -22,4 +25,25 @@ func Init() error {
 	}
 	client = ops.NewOpsSrvClient(conn)
 	return nil
+}
+
+func Deploy() {
+	project := env("OPS_PROJECT")
+	workloadID := env("OPS_PROJECT")
+	token := env("OPS_TOKEN")
+
+	metadata := fmt.Sprintf("job id %s", env("CI_JOB_ID"))
+
+	resp, err := client.Deploy(context.Background(), &ops.DeployRequest{
+		Project:    project,
+		WorkloadID: workloadID,
+		Token:      token,
+		Metadata:   metadata,
+	})
+	if err != nil {
+		fmt.Println("deploy error ", err)
+		return
+	}
+
+	fmt.Println("deploy result ", resp)
 }

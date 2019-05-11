@@ -493,6 +493,8 @@ github.com/vmware/govmomi v0.18.0/go.mod h1:URlwyTFZX72RmxtxuaFL2Uj3fD1JTvZdx59b
 github.com/vmware/vic v1.4.1/go.mod h1:AiTDrZuV13NkqRzseA5ZmF2QqLpTydaaGN75xgV6Ork=
 github.com/weeon/proto v0.0.0-20190511104003-418d1a37ee94 h1:elH9tWdiLPHHkpv1DqrZOTLiR2WMytiFYYUtO1PSDJE=
 github.com/weeon/proto v0.0.0-20190511104003-418d1a37ee94/go.mod h1:ZPr/pfmCWWNxKkNEU2wRXERIS96To+H2quGHkXW/LWk=
+github.com/weeon/proto v0.0.0-20190511111025-cd75473d565b h1:cAEimubr9mz2beHMYm0VadEafd3cIxHE5mvnEQ7vHoo=
+github.com/weeon/proto v0.0.0-20190511111025-cd75473d565b/go.mod h1:ZPr/pfmCWWNxKkNEU2wRXERIS96To+H2quGHkXW/LWk=
 github.com/willf/bitset v1.1.9/go.mod h1:RjeCKbqT1RxIR/KWY6phxZiaY1IyutSBfGjNPySAYV4=
 github.com/xanzy/ssh-agent v0.2.0/go.mod h1:0NyE30eGUDliuLEHJgYte/zncp2zdTStcOnWhgSqHD8=
 github.com/xiang90/probing v0.0.0-20190116061207-43a291ad63a2/go.mod h1:UETIi67q53MR2AWcXfiuqkDkRtnGDLqkBTpCHuJHxtU=

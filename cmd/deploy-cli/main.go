@@ -8,4 +8,5 @@ func main(){
 	if err != nil{
 
 	}
+	biz.Deploy()
 }
