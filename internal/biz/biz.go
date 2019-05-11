@@ -44,6 +44,7 @@ func Deploy() {
 	})
 	if err != nil {
 		fmt.Println("deploy error ", err)
+		TelegramNotify(fmt.Sprintf("❌ %s deploy fail %s", workloadID, err.Error()))
 		return
 	}
 
