@@ -62,7 +62,7 @@ func Deploy() {
 	}
 
 	format := `
-*%s [%s/%s]Deploy Result*
+*%s [%s/%s] Deploy Result*
 
 - 🍊 Project  *%s*
 - 🍉 Workload ID   *%s*   Result  %v 
