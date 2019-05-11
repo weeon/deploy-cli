@@ -48,4 +48,15 @@ func Deploy() {
 	}
 
 	fmt.Println("deploy  result ", resp)
+
+	var icon string
+	switch resp.Result {
+	case ops.DeployResult_DeployResultSuccess:
+		icon = "✅"
+	case ops.DeployResult_DeployResultFail:
+		icon = "❌"
+	}
+
+	msg := fmt.Sprintf("%s Project %s Deploy %s", icon, project, workloadID)
+	TelegramNotify(msg)
 }
