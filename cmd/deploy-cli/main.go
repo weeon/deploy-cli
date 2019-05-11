@@ -20,7 +20,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	flag.StringVar(&action, "action", "", "action")
+	flag.StringVar(&action, "a", "", "action")
 	flag.Parse()
 
 	switch action {
