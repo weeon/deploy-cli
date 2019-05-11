@@ -34,6 +34,8 @@ func Deploy() {
 
 	metadata := fmt.Sprintf("job id %s", env("CI_JOB_ID"))
 
+	fmt.Printf("deploy project %s  workload ID %s \n", project, workloadID)
+
 	resp, err := client.Deploy(context.Background(), &ops.DeployRequest{
 		Project:    project,
 		WorkloadID: workloadID,
@@ -45,5 +47,5 @@ func Deploy() {
 		return
 	}
 
-	fmt.Println("deploy result ", resp)
+	fmt.Println("deploy  result ", resp)
 }
