@@ -10,6 +10,8 @@ before_script:
 
 build-master:
   stage: build
+  tags:
+    - build-docker
   script:
     - docker build --pull -t "$CI_REGISTRY_IMAGE" .
     - docker push "$CI_REGISTRY_IMAGE"
@@ -18,6 +20,8 @@ build-master:
 
 build:
   stage: build
+  tags:
+    - build-docker
   script:
     - docker build --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" .
     - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
