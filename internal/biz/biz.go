@@ -57,6 +57,7 @@ func Deploy() {
 		icon = "❌"
 	}
 
-	msg := fmt.Sprintf("%s Project %s Deploy %s", icon, project, workloadID)
+	msg := fmt.Sprintf("%s Project %s Deploy %s Result:[%v] commit Title:[%s] user [%s]",
+		icon, project, workloadID, resp, env("CI_COMMIT_TITLE"), env("CI_DEPLOY_USER"))
 	TelegramNotify(msg)
 }
