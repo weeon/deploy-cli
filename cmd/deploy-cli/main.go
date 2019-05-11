@@ -19,8 +19,9 @@ func main() {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-	flag.Parse()
+
 	flag.StringVar(&action, "action", "", "action")
+	flag.Parse()
 
 	switch action {
 	case "deploy":
