@@ -32,8 +32,9 @@ func Deploy() {
 	workloadID := env("OPS_WORKLOAD_ID")
 	token := env("OPS_TOKEN")
 
-	metadata := fmt.Sprintf("JobID: %s commit Title:[%s] user [%s] ",
-		env("CI_JOB_ID"), env("CI_COMMIT_TITLE"), env("CI_DEPLOY_USER"))
+	metadata := fmt.Sprintf("JobID: %s commit Title:[%s] commit ID: [%s] user [%s] ",
+		env("CI_JOB_ID"), env("CI_COMMIT_TITLE"),
+		env("CI_COMMIT_SHA"), env("CI_DEPLOY_USER"))
 
 	fmt.Printf("deploy project %s  workload ID %s \n", project, workloadID)
 
