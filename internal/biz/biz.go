@@ -32,7 +32,8 @@ func Deploy() {
 	workloadID := env("OPS_WORKLOAD_ID")
 	token := env("OPS_TOKEN")
 
-	metadata := fmt.Sprintf("job id %s", env("CI_JOB_ID"))
+	metadata := fmt.Sprintf("JobID: %s commit Title:[%s] user [%s] ",
+		env("CI_JOB_ID"), env("CI_COMMIT_TITLE"), env("CI_DEPLOY_USER"))
 
 	fmt.Printf("deploy project %s  workload ID %s \n", project, workloadID)
 
@@ -44,7 +45,8 @@ func Deploy() {
 	})
 	if err != nil {
 		fmt.Println("deploy error ", err)
-		TelegramNotify(fmt.Sprintf("❌ %s deploy fail %s", workloadID, err.Error()))
+		TelegramNotify(fmt.Sprintf("❌ %s deploy fail %s metadata %s", workloadID,
+			err.Error(), metadata))
 		return
 	}
 
@@ -58,7 +60,7 @@ func Deploy() {
 		icon = "❌"
 	}
 
-	msg := fmt.Sprintf("%s Project %s Deploy %s Result:[%v] commit Title:[%s] user [%s]",
-		icon, project, workloadID, resp, env("CI_COMMIT_TITLE"), env("CI_DEPLOY_USER"))
+	msg := fmt.Sprintf("%s Project **%s** Deploy **%s** Result:[%v] Metadata %s",
+		icon, project, workloadID, resp, metadata)
 	TelegramNotify(msg)
 }

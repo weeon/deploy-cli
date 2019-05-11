@@ -26,6 +26,8 @@ func TelegramNotify(msg string) {
 	}
 
 	m := tgbotapi.NewMessage(int64(cid), msg)
+	m.ParseMode = "markdown"
+
 	_, err = bot.Send(m)
 	if err != nil {
 		fmt.Println(err)
