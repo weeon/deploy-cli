@@ -62,14 +62,14 @@ func Deploy() {
 	}
 
 	format := `
-*%s Deploy Result*
+*%s [%s/%s]Deploy Result*
 
-🍊 Project  *%s*
-🍉 Workload ID   *%s*   Result  %v 
-🍭 Metadata  %s
+- 🍊 Project  *%s*
+- 🍉 Workload ID   *%s*   Result  %v 
+- 🍭 Metadata  %s
 `
 
-	msg := fmt.Sprintf(format,
+	msg := fmt.Sprintf(format, env("CI_PROJECT_NAMESPACE"), env("CI_PROJECT_NAME"),
 		icon, project, workloadID, resp, metadata)
 	TelegramNotify(msg)
 }
