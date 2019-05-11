@@ -30,6 +30,7 @@ func TelegramNotify(msg string) {
 
 	_, err = bot.Send(m)
 	if err != nil {
+		fmt.Println(msg)
 		fmt.Println(err)
 		return
 	}
