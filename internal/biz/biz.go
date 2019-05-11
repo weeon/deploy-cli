@@ -29,7 +29,7 @@ func Init() error {
 
 func Deploy() {
 	project := env("OPS_PROJECT")
-	workloadID := env("OPS_PROJECT")
+	workloadID := env("OPS_WORKLOADID")
 	token := env("OPS_TOKEN")
 
 	metadata := fmt.Sprintf("job id %s", env("CI_JOB_ID"))
