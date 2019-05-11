@@ -61,7 +61,14 @@ func Deploy() {
 		icon = "❌"
 	}
 
-	msg := fmt.Sprintf("%s Project **%s** Deploy **%s** Result:[%v] Metadata %s",
+	format := `
+### %s Deploy Result
+* 🍊 Project **%s**
+* 🍉 Workload ID **%s** Result:[%v] 
+* 🍭 Metadata %s
+`
+
+	msg := fmt.Sprintf(format,
 		icon, project, workloadID, resp, metadata)
 	TelegramNotify(msg)
 }
