@@ -18,7 +18,7 @@ func env(k string) string {
 }
 
 func Init() error {
-	address := env("SRV_ADDR")
+	address := env("OPS_SRV_ADDR")
 	conn, err := grpc.Dial(address, grpc.WithInsecure())
 	if err != nil {
 		return err
