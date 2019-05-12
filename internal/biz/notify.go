@@ -2,7 +2,6 @@ package biz
 
 import (
 	"fmt"
-	"log"
 	"strconv"
 
 	"github.com/go-telegram-bot-api/telegram-bot-api"
@@ -16,7 +15,8 @@ var (
 func TelegramNotify(msg string) {
 	bot, err := tgbotapi.NewBotAPI(TelegramToken)
 	if err != nil {
-		log.Panic(err)
+		fmt.Print("init telegram bot fail skip", err)
+		return
 	}
 
 	cid, err := strconv.Atoi(TelegramChatID)
