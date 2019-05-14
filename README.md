@@ -10,6 +10,8 @@ env need:
 * OPS_TOKEN
 * OPS_WORKLOAD_ID
 
+
+
 ### gitlab-ci.yaml example
 
 ```
@@ -22,3 +24,10 @@ deploy:
   script:
     - /app/bin/deploy-cli -a deploy
 ```
+
+### Telegram notify
+
+set env to enable telegra notify:
+
+* TELEGRAM_TOKEN
+* TELEGRAM_CHATID
