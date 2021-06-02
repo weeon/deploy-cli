@@ -37,7 +37,7 @@ func Deploy() {
 		env("CI_JOB_ID"), env("CI_COMMIT_TITLE"),
 		env("CI_COMMIT_SHA"), env("CI_DEPLOY_USER"))
 
-	fmt.Printf("deploy project %s  workload ID %s \n", project, workloadID)
+	fmt.Printf("deploy  %s ,project %s   workload ID %s \n", ns, project, workloadID)
 
 	resp, err := client.Deploy(context.Background(), &ops.DeployRequest{
 		Project:    project,
