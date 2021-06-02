@@ -31,6 +31,7 @@ func Deploy() {
 	project := env("OPS_PROJECT")
 	workloadID := env("OPS_WORKLOAD_ID")
 	token := env("OPS_TOKEN")
+	ns := env("OPS_NAMESPACE")
 
 	metadata := fmt.Sprintf("JobID: %s commit Title:[%s] commit ID: [%s] user [%s] ",
 		env("CI_JOB_ID"), env("CI_COMMIT_TITLE"),
@@ -43,6 +44,7 @@ func Deploy() {
 		WorkloadID: workloadID,
 		Token:      token,
 		Metadata:   metadata,
+		Namespace:  ns,
 	})
 	if err != nil {
 		fmt.Println("deploy error ", err)
